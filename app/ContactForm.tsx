@@ -20,6 +20,8 @@ export default function ContactForm() {
   const [preferredTime, setPreferredTime] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<FieldErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const mailtoHref = useMemo(() => {
     const subject = encodeURIComponent("Contacto desde Amaranta");
@@ -44,12 +46,47 @@ export default function ContactForm() {
     return next;
   }
 
-  function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const next = validate();
     setErrors(next);
+    setSubmitError(null);
+    
     if (Object.keys(next).length > 0) return;
-    setSubmitted(true);
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          preferredDate: preferredDate || null,
+          preferredTime: preferredTime || null,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Error al enviar el mensaje");
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Error al enviar el mensaje. Por favor intenta de nuevo."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -60,19 +97,24 @@ export default function ContactForm() {
           Recibí tu mensaje
         </h3>
         <p style={{ marginTop: 12, fontSize: 17, lineHeight: 1.7, opacity: 0.85, maxWidth: 520 }}>
-          Para que quede registrado, puedes enviarlo ahora por email con un clic.
+          Tu mensaje ha sido enviado correctamente. Te responderé con calma y claridad.
         </p>
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 28 }}>
-          <a className="btn btn-primary" href={mailtoHref}>
-            Enviar por email
-          </a>
-          <button type="button" className="btn btn-secondary" onClick={() => setSubmitted(false)}>
-            Editar
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={() => {
+              setSubmitted(false);
+              setName("");
+              setEmail("");
+              setMessage("");
+              setPreferredDate("");
+              setPreferredTime("");
+            }}
+          >
+            Enviar otro mensaje
           </button>
         </div>
-        <p style={{ marginTop: 20, fontSize: 13, opacity: 0.65 }}>
-          (Cuando conectemos un backend, este formulario enviará directamente sin abrir tu email.)
-        </p>
       </div>
     );
   }
@@ -180,13 +222,23 @@ export default function ContactForm() {
       </div>
 
       <div className="contact-form-actions">
-        <button type="submit" className="btn btn-primary" style={{ fontSize: 17, padding: "14px 32px" }}>
-          Enviar mensaje
+        <button
+          type="submit"
+          className="btn btn-primary"
+          style={{ fontSize: 17, padding: "14px 32px" }}
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Enviando..." : "Enviar mensaje"}
         </button>
         <a className="contact-form-email-link" href={mailtoHref}>
           Prefiero escribir por email →
         </a>
       </div>
+      {submitError && (
+        <div className="contact-form-error" style={{ marginTop: 16, textAlign: "center" }}>
+          {submitError}
+        </div>
+      )}
 
       <p className="contact-form-footer">
         Te responderé con calma y claridad. Si tu mensaje es sensible, puedes escribir lo mínimo necesario.
