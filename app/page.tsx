@@ -244,7 +244,7 @@ export default function Home() {
             
             <div style={{ textAlign: "center", marginTop: 64, paddingTop: 32, borderTop: "1px solid rgba(120, 122, 91, 0.18)" }}>
               <p style={{ fontSize: 20, lineHeight: 1.75, opacity: 0.92, maxWidth: 720, margin: "0 auto" }}>
-                El cambio se construye con claridad, recursos, trabajo interno, plan y acción.
+                El cambio se construye con claridad, recursos, trabajo interno, <span className="decorative-line">plan y acción</span>.
               </p>
             </div>
           </div>
