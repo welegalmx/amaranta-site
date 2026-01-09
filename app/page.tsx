@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import ContactForm from "./ContactForm";
+import { useState } from "react";
 
 // Real people + city imagery (stock for now)
 const GALLERY = [
@@ -24,11 +27,13 @@ const GALLERY = [
 ] as const;
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <>
       <header className="header">
         <div className="container header-inner">
-          <a href="#inicio" aria-label="Ir al inicio" className="brand">
+          <a href="#inicio" aria-label="Ir al inicio" className="brand" onClick={() => setMobileMenuOpen(false)}>
             <span className="brand-name">AMARANTA</span>
             <span className="kicker" style={{ letterSpacing: "0.18em" }}>
               Coach
@@ -42,6 +47,29 @@ export default function Home() {
             <a href="#quien-soy">¿Quién soy?</a>
             <a href="#contacto">Contacto</a>
           </nav>
+
+          <button
+            className="mobile-menu-button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              {mobileMenuOpen ? (
+                <path d="M18 6L6 18M6 6l12 12" />
+              ) : (
+                <path d="M3 12h18M3 6h18M3 18h18" />
+              )}
+            </svg>
+          </button>
+
+          <nav className={`mobile-menu ${mobileMenuOpen ? "open" : ""}`} aria-label="Navegación móvil">
+            <a href="#inicio" onClick={() => setMobileMenuOpen(false)}>Home</a>
+            <a href="#coaching" onClick={() => setMobileMenuOpen(false)}>Coaching</a>
+            <a href="#libro" onClick={() => setMobileMenuOpen(false)}>Libro</a>
+            <a href="#quien-soy" onClick={() => setMobileMenuOpen(false)}>¿Quién soy?</a>
+            <a href="#contacto" onClick={() => setMobileMenuOpen(false)}>Contacto</a>
+          </nav>
         </div>
       </header>
 
@@ -53,20 +81,20 @@ export default function Home() {
               alt="Amaranta Gómez Salgado"
               fill
               sizes="100vw"
-              style={{ objectFit: "cover", objectPosition: "85% 20%", transform: "scale(0.85)" }}
+              className="hero-image"
               priority
             />
             <div className="hero-overlay" />
           </div>
           <div className="container">
-            <div className="hero-content" style={{ paddingLeft: "0", paddingTop: "460px", marginLeft: "-400px" }}>
-              <h1 className="h2" style={{ fontSize: 72, lineHeight: 0.95, fontWeight: 700, color: "#ffffff" }}>
+            <div className="hero-content">
+              <h1 className="hero-title">
                 Crea la vida profesional y personal que tanto deseas.
               </h1>
-              <p style={{ maxWidth: 600, fontSize: 22, lineHeight: 1.85, color: "#ffffff", opacity: 0.95 }}>
+              <p className="hero-text">
                 Te acompaño a crearlo con claridad, intención y acción.
               </p>
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 8 }}>
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 20 }}>
                 <a className="btn btn-primary" href="#contacto">
                   Empieza tu reinvención
                 </a>
@@ -74,21 +102,21 @@ export default function Home() {
             </div>
           </div>
         </section>        {/* QUOTE AMARANTA */}
-        <section className="section" aria-label="Quote" style={{ paddingTop: "100px" }}>
+        <section className="section" aria-label="Quote">
           <div className="container">
             <div className="stack" style={{ maxWidth: 920, textAlign: "center", margin: "0 auto" }}>
               <p className="kicker" style={{ color: "#AE887B" }}>Amaranta Gómez Salgado</p>
-              <blockquote style={{ margin: 0, fontSize: 38, lineHeight: 1.65, fontStyle: "italic", color: "#AE887B", position: "relative", zIndex: 2 }}>
+              <blockquote style={{ margin: 0, fontSize: "clamp(24px, 5vw, 38px)", lineHeight: 1.65, fontStyle: "italic", color: "#AE887B", position: "relative", zIndex: 2, padding: "0 20px" }}>
                 "El coaching es un atajo para alcanzar lo que deseas. Aporta claridad en los momentos de duda, transforma
                 la inspiración y la motivación en resultados. Todos podemos crear la vida que deseamos; solo necesitamos
                 tomar acción. Y es más fácil hacerlo acompañado que hacerlo solo."
               </blockquote>
-              <div style={{ marginTop: -40, display: "flex", justifyContent: "center", position: "relative", zIndex: 1 }}>
+              <div style={{ marginTop: "-20px", display: "flex", justifyContent: "center", position: "relative", zIndex: 1 }}>
                 <Image
                   src="/images/firma.jpeg"
                   alt="Firma de Amaranta"
                   width={600} height={240}
-                  style={{ objectFit: "contain" }}
+                  style={{ objectFit: "contain", maxWidth: "90%", height: "auto" }}
                 />
               </div>
             </div>
@@ -122,7 +150,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="stack" style={{ gap: 10 }}>
-                <div className="gallery-item gallery-item--tall" style={{ minHeight: 520 }}>
+                <div className="gallery-item gallery-item--tall">
                   <Image
                     src="/images/AMI-221.jpg"
                     alt="Amaranta Gómez Salgado"
@@ -138,7 +166,7 @@ export default function Home() {
         <section className="section-tight" aria-label="Para quién">
           <div className="container">
             <div className="stack" style={{ textAlign: "center", marginBottom: 48 }}>
-              <h2 className="h2" style={{ fontSize: 48, lineHeight: 1.0 }}>
+              <h2 className="h2">
                 Para quién es el coaching
               </h2>
               <p className="kicker" style={{ color: "#AE887B" }}>Es para ti si…</p>
@@ -172,7 +200,7 @@ export default function Home() {
           <div className="container">
             <div className="stack" style={{ textAlign: "center", marginBottom: 64 }}>
               <p className="kicker" style={{ color: "#AE887B" }}>Cómo funciona el coaching</p>
-              <h2 className="h2" style={{ fontSize: 48, lineHeight: 1.0 }}>El proceso en 5 pasos</h2>
+              <h2 className="h2">El proceso en 5 pasos</h2>
             </div>
             
             <div className="process-flow">
@@ -225,7 +253,7 @@ export default function Home() {
           <div className="container">
             <div className="stack" style={{ textAlign: "center", marginBottom: 64 }}>
               <p className="kicker" style={{ color: "#AE887B" }}>Programas y servicios</p>
-              <h2 className="h2" style={{ fontSize: 48, lineHeight: 1.0 }}>Acompañamiento que se adapta a ti</h2>
+              <h2 className="h2">Acompañamiento que se adapta a ti</h2>
             </div>
             
             <div className="programs-grid">
@@ -293,7 +321,7 @@ export default function Home() {
                 </a>
               </div>
               <div className="stack" style={{ gap: 10 }}>
-                <div className="gallery-item gallery-item--tall" style={{ minHeight: 520 }}>
+                <div className="gallery-item gallery-item--tall">
                   <Image
                     src="/images/libro.jpeg"
                     alt="Portada del libro"
@@ -333,8 +361,8 @@ export default function Home() {
           <div className="container">
             <div className="stack" style={{ textAlign: "center", marginBottom: 48 }}>
               <p className="kicker" style={{ color: "#AE887B" }}>Contacto</p>
-              <h2 className="h2" style={{ fontSize: 48, lineHeight: 1.0 }}>Escríbeme</h2>
-              <p className="muted" style={{ maxWidth: 640, margin: "0 auto", fontSize: 18 }}>
+              <h2 className="h2">Escríbeme</h2>
+              <p className="muted" style={{ maxWidth: 640, margin: "0 auto", fontSize: "clamp(16px, 4vw, 18px)" }}>
                 Cuéntame lo esencial. Te responderé con calma y claridad.
               </p>
             </div>
