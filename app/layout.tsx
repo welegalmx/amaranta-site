@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Inter } from "next/font/google";
+import { Anton, Inter, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 
 const anton = Anton({
@@ -13,6 +13,12 @@ const anton = Anton({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
+  display: "swap",
+});
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ["latin"],
+  variable: "--font-code-pro",
   display: "swap",
 });
 
@@ -31,7 +37,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${anton.variable} ${inter.variable}`}>
+    <html lang="es" className={`${anton.variable} ${inter.variable} ${sourceCodePro.variable}`}>
       <body>
         <a className="skip-link" href="#contenido">
           Saltar al contenido

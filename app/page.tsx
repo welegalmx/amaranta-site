@@ -42,6 +42,7 @@ export default function Home() {
 
           <nav className="nav" aria-label="Navegación">
             <a href="#inicio">Home</a>
+            <a href="/rest-and-reinvent">Rest &amp; Reinvent</a>
             <a href="#coaching">Coaching</a>
             <a href="#libro">Libro</a>
             <a href="#quien-soy">¿Quién soy?</a>
@@ -65,6 +66,7 @@ export default function Home() {
 
           <nav className={`mobile-menu ${mobileMenuOpen ? "open" : ""}`} aria-label="Navegación móvil">
             <a href="#inicio" onClick={() => setMobileMenuOpen(false)}>Home</a>
+            <a href="/rest-and-reinvent" onClick={() => setMobileMenuOpen(false)}>Rest &amp; Reinvent</a>
             <a href="#coaching" onClick={() => setMobileMenuOpen(false)}>Coaching</a>
             <a href="#libro" onClick={() => setMobileMenuOpen(false)}>Libro</a>
             <a href="#quien-soy" onClick={() => setMobileMenuOpen(false)}>¿Quién soy?</a>
