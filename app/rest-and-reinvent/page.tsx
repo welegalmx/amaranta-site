@@ -9,6 +9,8 @@ const CTA_HREF = "#contacto-rr";
 const BOOKING_URL =
   "https://thehub-api.mastermind.com/widget/bookings/bonus-call-reinicia-y-reinventate-llamada-uno-a-unoog20i1";
 const PAYMENT_URL = "https://thehub-api.mastermind.com/payment-link/68f67d1a2197092568e2d940";
+const BOOKING_WIDGET_URL =
+  "https://thehub-api.mastermind.com/widget/bookings/bonus-call-reinicia-y-reinventate-llamada-uno-a-unoog20i1";
 
 export default function RestAndReinventPage() {
   return (
@@ -31,10 +33,10 @@ export default function RestAndReinventPage() {
               <div className="rr-hero-content">
                 <h1 className="rr-hero-title">REINICIA Y REINVENTATE</h1>
                 <p className="rr-hero-text">
-                  El coaching grupal para quienes están pasando por un momento de cambio, quieren mejorar algún aspecto de su vida o están listos para alcanzar un objetivo con más confianza, confianza y dirección.
+                  El coaching grupal para quienes estén pasando por un momento de cambio, quieran mejorar algún aspecto de su vida o estén listas para alcanzar un objetivo con más claridad, herramientas y dirección.
                 </p>
                 <p className="rr-hero-text">
-                  No es un curso, es un proceso guiado para desaprender lo que ya no necesitas, fortalecer tu confianza, crear un plan real y tomar acción hacia la vida que quieres.
+                  No es un curso. Es un proceso guiado para desaprender lo que ya no necesitas, fortalecer tu confianza, crear un plan real y tomar acción hacia la vida que quieres.
                 </p>
                 <a
                   className="btn btn-primary rr-btn-olive"
@@ -55,9 +57,7 @@ export default function RestAndReinventPage() {
           <div className="container">
             <div className="rr-blur-card">
               <h2 className="rr-blur-title">
-                ¿Sientes que sabes que necesitas un cambio,
-                <br />
-                pero no logras aterrizarlo?
+                ¿Sabes que necesitas un cambio, pero no logras aterrizarlo?
               </h2>
               <p className="rr-blur-text">
                 Quizá llevas tiempo postergándolo, dudando de ti, repitiendo patrones o sintiendo que pasa el tiempo y sigues en el mismo lugar. Este programa es para dejar de dar vueltas y empezar a avanzar con claridad, estructura y acompañamiento.
@@ -92,6 +92,15 @@ export default function RestAndReinventPage() {
         <section className="rr-section rr-section-dark" aria-label="Lo que vas a obtener">
           <div className="container">
             <div className="rr-dark-split">
+              <div className="rr-dark-image-wrap">
+                <Image
+                  src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80"
+                  alt="Cuaderno y lentes sobre madera"
+                  fill
+                  sizes="(max-width: 980px) 100vw, 45vw"
+                  className="rr-dark-image"
+                />
+              </div>
               <div className="rr-dark-content">
                 <h2 className="rr-dark-title">Lo que vas a obtener</h2>
                 <ul className="rr-list-bullets rr-list-light">
@@ -103,18 +112,14 @@ export default function RestAndReinventPage() {
                   <li>Mejor toma de decisiones</li>
                   <li>Avance real hacia una nueva etapa de tu vida</li>
                 </ul>
-                <a className="btn rr-btn-light-green" href={CTA_HREF}>
+                <a
+                  className="btn rr-btn-light-green"
+                  href={BOOKING_WIDGET_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Quiero saber más
                 </a>
-              </div>
-              <div className="rr-dark-image-wrap">
-                <Image
-                  src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80"
-                  alt="Cuaderno y lentes sobre madera"
-                  fill
-                  sizes="(max-width: 980px) 100vw, 45vw"
-                  className="rr-dark-image"
-                />
               </div>
             </div>
           </div>
@@ -123,21 +128,41 @@ export default function RestAndReinventPage() {
         {/* 5. Temas de sesiones */}
         <section className="rr-section rr-section-white" aria-label="Temas de sesiones">
           <div className="container">
-            <h2 className="rr-section-title rr-section-title-center">Temas de sesiones</h2>
+            <h2 className="rr-section-title rr-section-title-center">Temarío de Módulos</h2>
             <div className="rr-temas-split">
               <div className="rr-temas-list-wrap">
                 <ol className="rr-list-numbered">
-                  <li><strong>Descubrir y desaprender:</strong> Identificando patrones, creencias y formas de pensar que hoy ya no te ayudan a avanzar.</li>
-                  <li><strong>Construcción de confianza inquebrantable:</strong> Trabajando en tu seguridad personal, tu voz interna y tu capacidad de relacionarte con más firmeza.</li>
-                  <li><strong>Reinvención y redirección:</strong> Definiendo con más claridad qué quieres, hacia dónde vas y cómo se ve esta nueva etapa para ti.</li>
-                  <li><strong>Acción, transición y avance a la meta:</strong> Convertiremos la claridad en movimiento para que empieces a actuar con intención y constancia.</li>
-                  <li><strong>Estrategias de reinvención:</strong> Cerrando el proceso con herramientas concretas para sostener el cambio más allá del coaching.</li>
+                  <li>
+                    <strong>Descubrir y desaprender:</strong>
+                    <br />
+                    Identificando patrones, creencias y formas de pensar que hoy ya no te ayudan a avanzar.
+                  </li>
+                  <li>
+                    <strong>Construcción de confianza inquebrantable:</strong>
+                    <br />
+                    Trabajando en tu seguridad personal, tu voz interna y tu capacidad de relacionarte con más firmeza.
+                  </li>
+                  <li>
+                    <strong>Reinvención y redirección:</strong>
+                    <br />
+                    Definiendo con más claridad qué quieres, hacia dónde vas y cómo se ve esta nueva etapa para ti.
+                  </li>
+                  <li>
+                    <strong>Acción, transición y avance a la meta:</strong>
+                    <br />
+                    Convertiremos la claridad en movimiento para que empieces a actuar con intención y constancia.
+                  </li>
+                  <li>
+                    <strong>Estrategias de reinvención:</strong>
+                    <br />
+                    Cerrando el proceso con herramientas concretas para sostener el cambio más allá del coaching.
+                  </li>
                 </ol>
               </div>
               <div className="rr-temas-image-wrap">
                 <Image
-                  src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=600&q=80"
-                  alt="Concepto de mente y conexiones"
+                  src="/images/rr-temario-modulos.png"
+                  alt="Manos escribiendo en un cuaderno"
                   fill
                   sizes="(max-width: 980px) 100vw, 45vw"
                   className="rr-temas-image"
@@ -145,7 +170,7 @@ export default function RestAndReinventPage() {
               </div>
             </div>
             <div className="rr-temas-cta">
-              <a className="btn rr-btn-beige" href={CTA_HREF}>
+              <a className="btn rr-btn-beige" href={PAYMENT_URL} target="_blank" rel="noopener noreferrer">
                 Quiero mi lugar
               </a>
             </div>
@@ -168,15 +193,31 @@ export default function RestAndReinventPage() {
               <div className="rr-olive-content">
                 <h2 className="rr-olive-title">En qué consiste</h2>
                 <ul className="rr-list-bullets rr-list-olive">
-                  <li>1 llamada inicial para definir tu objetivo</li>
+                  <li>Coaching grupal en vivo en línea</li>
+                  <li>
+                    1 llamada uno a uno (solo tú + Amaranta) inicial para definir tu objetivo
+                  </li>
                   <li>5 sesiones grupales en vivo de 90 minutos (1 sesión por semana)</li>
-                  <li>Martes de 7:00 a 8:30 pm hora México</li>
-                  <li>1 llamada de cierre</li>
+                  <li>1 llamada de cierre uno a uno</li>
                   <li>Un espacio íntimo, guiado, reflexivo y transformador.</li>
-                  <li>Costo regular: <s>$750USD</s></li>
-                  <li>Ahora $5000MXN / $250USD</li>
+                  <li>Costo regular $9500 MX ($499USD)</li>
+                  <li>Ahora $5800MXN / $350USD</li>
                 </ul>
-                <a className="btn rr-btn-pink" href={CTA_HREF}>
+                <p style={{ marginTop: 18, marginBottom: 0 }}>
+                  <strong>Siguientes cursos:</strong>
+                  <br />
+                  8 de abril , la sesiones se llevaran a cabo los Martes de 7:00 a 8:30 pm hora CDMX
+                  <br />
+                  29 de abril, la sesiones se llevaran a cabo los Miércoles de 10:00 a 11:30 am hora CDMX
+                  <br />
+                  <strong>¡CUPO LIMITADO!</strong>
+                </p>
+                <a
+                  className="btn rr-btn-pink"
+                  href="https://thehub-api.mastermind.com/payment-link/68f67d1a2197092568e2d940"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Quiero mi lugar
                 </a>
               </div>
@@ -292,7 +333,7 @@ export default function RestAndReinventPage() {
               </p>
             </div>
             <div style={{ marginTop: 32 }}>
-              <ContactForm />
+              <ContactForm showAgenda={false} />
             </div>
           </div>
         </section>

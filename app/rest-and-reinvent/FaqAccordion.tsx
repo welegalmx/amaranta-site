@@ -5,27 +5,27 @@ import { useState } from "react";
 const FAQ_ITEMS = [
   {
     q: "¿Cuándo empieza el siguiente grupo?",
-    a: "Cada cohorte tiene fechas específicas. Escríbeme por contacto y te envío las próximas fechas de inicio.",
+    a: "Martes 8 de abril a la 7:00pm hora México y Miércoles 29 de abril la sesiones 10:00 am hora México.",
   },
   {
-    q: "¿Qué temas puedo trabajar en este coaching?",
-    a: "Trabajamos cambio, reinvención, confianza, claridad de objetivos, toma de decisiones y plan de acción personal.",
+    q: "¿Qué horarios tiene?",
+    a: "El grupo de la tarde son Martes de 7:00 a 8:30 pm hora Ciudad de México. Grupo tarde son Miércoles de 10:00 a 11:30 am hora Ciudad de México.",
   },
   {
-    q: "¿Qué horarios tienen?",
-    a: "Las sesiones son los martes de 7:00 a 8:30 pm hora México.",
+    q: "¿Qué temas puedo tratar en el coaching?",
+    a: "El plan que hagas es 100% personal por lo que puedes venir con temas específicos personales o profesionales. Ejemplo en aspecto personal crear un nuevo hábito, manejo del tiempo, pareja o profesional crecimiento laboral, emprendimiento, cambio de trabajo. En fin cualquier objetivo que busques alcanzar.",
   },
   {
     q: "¿Qué pasa si un día no puedo ir?",
-    a: "Puedes ver la grabación de la sesión y seguir el proceso. Te recomendamos asistir en vivo para mayor aprovechamiento.",
+    a: "Tendrás acceso a una plataforma donde estará la sesión grabada y los materiales de apoyo.",
+  },
+  {
+    q: "¿Cómo puedo saber si el programa es para mí?",
+    a: "Agenda una llamada gratuita y así aclararás cualquier duda.",
   },
   {
     q: "¿Todas las sesiones son en vivo?",
-    a: "Sí. Las 5 sesiones grupales son en vivo. La llamada inicial y la de cierre también son en vivo.",
-  },
-  {
-    q: "¿Cómo puedo saber si este programa es para mí?",
-    a: "Si estás en una etapa de cambio o reinvención, quieres recuperar confianza y dirección, o sabes que necesitas accionar pero te dispersas, este espacio es para ti. Puedes agendar una llamada para aclarar dudas.",
+    a: "Sí. Las 5 sesiones grupales en vivo son de 90 minutos y se realizan 1 sesión por semana.",
   },
 ];
 

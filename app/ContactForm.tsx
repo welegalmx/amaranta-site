@@ -12,7 +12,7 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 }
 
-export default function ContactForm() {
+export default function ContactForm({ showAgenda = true }: { showAgenda?: boolean }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -26,12 +26,16 @@ export default function ContactForm() {
   const mailtoHref = useMemo(() => {
     const subject = encodeURIComponent("Contacto desde Amaranta");
     const body = encodeURIComponent(
-      `Nombre: \${name || ""}\nEmail: \${email || ""}\nPreferencia de cita: \${preferredDate || "(sin fecha)"} \${preferredTime || ""}\n\nMensaje:\n\${message || ""}`
+      `Nombre: \${name || ""}\nEmail: \${email || ""}${
+        showAgenda
+          ? `\nPreferencia de cita: \${preferredDate || "(sin fecha)"} \${preferredTime || ""}`
+          : `\nPreferencia de cita: (no aplica)`
+      }\n\nMensaje:\n\${message || ""}`
     );
 
     // TODO: reemplazar por el correo real de Amaranta
     return `mailto:hola@amaranta.life?subject=\${subject}&body=\${body}`;
-  }, [name, email, preferredDate, preferredTime, message]);
+  }, [name, email, preferredDate, preferredTime, message, showAgenda]);
 
   function validate(): FieldErrors {
     const next: FieldErrors = {};
@@ -66,8 +70,8 @@ export default function ContactForm() {
           name,
           email,
           message,
-          preferredDate: preferredDate || null,
-          preferredTime: preferredTime || null,
+          preferredDate: showAgenda ? preferredDate || null : null,
+          preferredTime: showAgenda ? preferredTime || null : null,
         }),
       });
 
@@ -164,42 +168,42 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div className="contact-form-field">
-        <label className="contact-form-label">
-          Agenda (opcional)
-        </label>
-        <div className="contact-form-date-grid">
-          <div className="contact-form-date-field">
-            <label htmlFor="preferredDate" className="contact-form-sublabel">
-              Fecha
-            </label>
-            <input
-              id="preferredDate"
-              name="preferredDate"
-              type="date"
-              value={preferredDate}
-              onChange={(e) => setPreferredDate(e.target.value)}
-              className="contact-form-input"
-            />
+      {showAgenda ? (
+        <div className="contact-form-field">
+          <label className="contact-form-label">Agenda (opcional)</label>
+          <div className="contact-form-date-grid">
+            <div className="contact-form-date-field">
+              <label htmlFor="preferredDate" className="contact-form-sublabel">
+                Fecha
+              </label>
+              <input
+                id="preferredDate"
+                name="preferredDate"
+                type="date"
+                value={preferredDate}
+                onChange={(e) => setPreferredDate(e.target.value)}
+                className="contact-form-input"
+              />
+            </div>
+            <div className="contact-form-date-field">
+              <label htmlFor="preferredTime" className="contact-form-sublabel">
+                Hora
+              </label>
+              <input
+                id="preferredTime"
+                name="preferredTime"
+                type="time"
+                value={preferredTime}
+                onChange={(e) => setPreferredTime(e.target.value)}
+                className="contact-form-input"
+              />
+            </div>
           </div>
-          <div className="contact-form-date-field">
-            <label htmlFor="preferredTime" className="contact-form-sublabel">
-              Hora
-            </label>
-            <input
-              id="preferredTime"
-              name="preferredTime"
-              type="time"
-              value={preferredTime}
-              onChange={(e) => setPreferredTime(e.target.value)}
-              className="contact-form-input"
-            />
-          </div>
+          <p className="contact-form-hint">
+            Selecciona una fecha y hora tentativas. Te confirmo disponibilidad por email.
+          </p>
         </div>
-        <p className="contact-form-hint">
-          Selecciona una fecha y hora tentativas. Te confirmo disponibilidad por email.
-        </p>
-      </div>
+      ) : null}
 
       <div className="contact-form-field">
         <label htmlFor="message" className="contact-form-label">

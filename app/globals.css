@@ -435,7 +435,7 @@ textarea:focus {
 }
 
 .h2 {
-  font-size: 32px;
+  font-size: 36px;
   line-height: 1.1;
   margin: 0;
   letter-spacing: 0.04em;
@@ -443,19 +443,19 @@ textarea:focus {
 
 @media (min-width: 640px) {
   .h2 {
-    font-size: 40px;
+    font-size: 48px;
   }
 }
 
 @media (min-width: 980px) {
   .h2 {
-    font-size: 52px;
+    font-size: 60px;
     line-height: 1.0;
   }
 }
 
 .h3 {
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1.05;
   margin: 0;
   letter-spacing: 0.04em;
@@ -1157,10 +1157,10 @@ textarea:focus {
 
 .rr-hero-title {
   font-family: var(--font-anton), system-ui, sans-serif;
-  font-size: clamp(28px, 5vw, 42px);
+  font-size: clamp(32px, 5.8vw, 52px);
   line-height: 1.1;
   margin: 0;
-  color: #5c4033;
+  color: #AE887B;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
@@ -1232,7 +1232,7 @@ textarea:focus {
 
 .rr-blur-title {
   font-family: var(--font-anton), system-ui, sans-serif;
-  font-size: clamp(28px, 5.5vw, 52px);
+  font-size: clamp(30px, 6vw, 60px);
   line-height: 1.15;
   margin: 0 0 24px;
   color: var(--amaranta-olive);
@@ -1263,6 +1263,10 @@ textarea:focus {
   background: #c4a77d !important;
   color: #fff !important;
   border: none !important;
+  font-family: var(--font-anton), system-ui, sans-serif !important;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .rr-btn-beige:hover {
@@ -1286,7 +1290,7 @@ textarea:focus {
 
 .rr-section-title {
   font-family: var(--font-anton), system-ui, sans-serif;
-  font-size: clamp(26px, 4vw, 36px);
+  font-size: clamp(30px, 4.8vw, 46px);
   line-height: 1.15;
   margin: 0 0 28px;
   color: #5c4033;
@@ -1300,10 +1304,20 @@ textarea:focus {
 .rr-para-ti-si-title {
   text-align: center;
   font-size: clamp(32px, 5.5vw, 48px) !important;
+  color: #AE887B !important;
 }
 
 .rr-para-ti-si-list {
   font-family: var(--font-code-pro), ui-monospace, monospace !important;
+}
+
+.rr-para-ti-si-list li {
+  padding-left: 0;
+  text-align: center;
+}
+
+.rr-para-ti-si-list li::before {
+  display: none;
 }
 
 .rr-list-bullets {
@@ -1334,7 +1348,7 @@ textarea:focus {
 
 /* Dark block (Lo que vas a obtener) */
 .rr-section-dark {
-  background: #5c4033;
+  background: #AE887B;
   color: #fff;
 }
 
@@ -1354,7 +1368,7 @@ textarea:focus {
 
 .rr-dark-title {
   font-family: var(--font-anton), system-ui, sans-serif;
-  font-size: clamp(26px, 4vw, 36px);
+  font-size: clamp(30px, 4.8vw, 46px);
   line-height: 1.15;
   margin: 0 0 24px;
   color: #fff;
@@ -1366,7 +1380,7 @@ textarea:focus {
 
 @media (min-width: 980px) {
   .rr-dark-content {
-    order: 0;
+    order: 1;
   }
 }
 
@@ -1381,7 +1395,7 @@ textarea:focus {
 @media (min-width: 980px) {
   .rr-dark-image-wrap {
     min-height: 380px;
-    order: 1;
+    order: 0;
   }
 }
 
@@ -1395,6 +1409,10 @@ textarea:focus {
   color: #fff !important;
   border: none !important;
   margin-top: 20px;
+  font-family: var(--font-anton), system-ui, sans-serif !important;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .rr-btn-light-green:hover {
@@ -1476,7 +1494,7 @@ textarea:focus {
 
 /* En qué consiste - Olive */
 .rr-section-olive {
-  background: #787A5B;
+  background: #C3C1AB;
   color: #fff;
 }
 
@@ -1520,7 +1538,7 @@ textarea:focus {
 
 .rr-olive-title {
   font-family: var(--font-anton), system-ui, sans-serif;
-  font-size: clamp(26px, 4vw, 34px);
+  font-size: clamp(30px, 4.6vw, 42px);
   line-height: 1.15;
   margin: 0 0 24px;
   color: #EBE8DE;
@@ -1536,6 +1554,10 @@ textarea:focus {
   color: #fff !important;
   border: none !important;
   margin-top: 20px;
+  font-family: var(--font-anton), system-ui, sans-serif !important;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .rr-btn-pink:hover {
@@ -1544,7 +1566,7 @@ textarea:focus {
 
 /* ¿Por qué funciona? - Purple */
 .rr-section-purple {
-  background: #7d6b7a;
+  background: #AE887B;
   color: #fff;
 }
 
@@ -1571,9 +1593,10 @@ textarea:focus {
 .rr-purple-signoff {
   margin-top: 32px !important;
   font-style: italic;
-  text-align: right;
+  text-align: left;
   font-size: 15px !important;
   opacity: 0.95;
+  font-weight: 700;
 }
 
 /* ¿Quién soy? */
@@ -1613,6 +1636,10 @@ textarea:focus {
   color: #ae887b !important;
   border: 1px solid #c4a77d !important;
   margin-top: 12px;
+  font-family: var(--font-anton), system-ui, sans-serif !important;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .rr-btn-outline:hover {
@@ -1716,6 +1743,10 @@ textarea:focus {
   border: none !important;
   padding: 16px 32px;
   font-size: 15px;
+  font-family: var(--font-anton), system-ui, sans-serif !important;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .rr-btn-green:hover {
@@ -1730,7 +1761,7 @@ textarea:focus {
 
 .rr-faq-title {
   font-family: var(--font-anton), system-ui, sans-serif;
-  font-size: clamp(22px, 4vw, 28px);
+  font-size: clamp(26px, 4.6vw, 34px);
   text-align: center;
   margin: 0 0 40px;
   color: #fff;
