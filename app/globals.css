@@ -1207,7 +1207,7 @@ textarea:focus {
 .rr-blur-bg {
   position: absolute;
   inset: 0;
-  background: url("https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=60") center/cover;
+  background: url("/images/IM1.jpeg") center/cover;
   filter: blur(24px);
   transform: scale(1.08);
   opacity: 0.5;
@@ -1361,7 +1361,7 @@ textarea:focus {
 
 @media (min-width: 980px) {
   .rr-dark-split {
-    grid-template-columns: 1fr 0.9fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 56px;
   }
 }
@@ -1386,7 +1386,7 @@ textarea:focus {
 
 .rr-dark-image-wrap {
   position: relative;
-  min-height: 280px;
+  min-height: 380px;
   border-radius: var(--radius);
   overflow: hidden;
   order: 0;
@@ -1394,7 +1394,7 @@ textarea:focus {
 
 @media (min-width: 980px) {
   .rr-dark-image-wrap {
-    min-height: 380px;
+    min-height: 540px;
     order: 0;
   }
 }
@@ -1429,7 +1429,7 @@ textarea:focus {
 
 @media (min-width: 980px) {
   .rr-temas-split {
-    grid-template-columns: 1fr 0.85fr;
+    grid-template-columns: 1fr 1.1fr;
     gap: 48px;
   }
 }
@@ -1471,14 +1471,14 @@ textarea:focus {
 
 .rr-temas-image-wrap {
   position: relative;
-  min-height: 280px;
+  min-height: 380px;
   border-radius: var(--radius);
   overflow: hidden;
 }
 
 @media (min-width: 980px) {
   .rr-temas-image-wrap {
-    min-height: 360px;
+    min-height: 520px;
   }
 }
 
@@ -1507,14 +1507,14 @@ textarea:focus {
 
 @media (min-width: 980px) {
   .rr-olive-split {
-    grid-template-columns: 0.9fr 1fr;
+    grid-template-columns: 1.15fr 0.85fr;
     gap: 56px;
   }
 }
 
 .rr-olive-image-wrap {
   position: relative;
-  min-height: 280px;
+  min-height: 380px;
   border-radius: var(--radius);
   overflow: hidden;
   order: 0;
@@ -1522,7 +1522,7 @@ textarea:focus {
 
 @media (min-width: 980px) {
   .rr-olive-image-wrap {
-    min-height: 340px;
+    min-height: 520px;
     order: 0;
   }
 }
@@ -1710,6 +1710,11 @@ textarea:focus {
   object-fit: cover;
 }
 
+.rr-testimonial-avatar--empty {
+  background: rgba(195, 193, 171, 0.35);
+  border: 1px solid rgba(120, 122, 91, 0.12);
+}
+
 .rr-testimonial-name {
   font-weight: 700;
   font-size: 17px;
@@ -1726,10 +1731,14 @@ textarea:focus {
 
 .rr-testimonial-text {
   margin: 0;
+  width: 100%;
+  align-self: stretch;
   font-size: 14px;
   line-height: 1.7;
   color: var(--amaranta-text);
   opacity: 0.9;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .rr-cta-button-wrap {

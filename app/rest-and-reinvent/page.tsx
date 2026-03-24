@@ -94,8 +94,8 @@ export default function RestAndReinventPage() {
             <div className="rr-dark-split">
               <div className="rr-dark-image-wrap">
                 <Image
-                  src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80"
-                  alt="Cuaderno y lentes sobre madera"
+                  src="/images/IM2.jpeg"
+                  alt="Imagen del programa Lo que vas a obtener"
                   fill
                   sizes="(max-width: 980px) 100vw, 45vw"
                   className="rr-dark-image"
@@ -183,8 +183,8 @@ export default function RestAndReinventPage() {
             <div className="rr-olive-split">
               <div className="rr-olive-image-wrap">
                 <Image
-                  src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=600&q=80"
-                  alt="Manos escribiendo en cuaderno"
+                  src="/images/en-que-consiste.jpeg"
+                  alt="Mujer escribiendo en cuaderno en un espacio luminoso de trabajo"
                   fill
                   sizes="(max-width: 980px) 100vw, 45vw"
                   className="rr-olive-image"
@@ -206,7 +206,7 @@ export default function RestAndReinventPage() {
                 <p style={{ marginTop: 18, marginBottom: 0 }}>
                   <strong>Siguientes cursos:</strong>
                   <br />
-                  8 de abril , la sesiones se llevaran a cabo los Martes de 7:00 a 8:30 pm hora CDMX
+                  14 de abril , la sesiones se llevaran a cabo los Martes de 7:00 a 8:30 pm hora CDMX
                   <br />
                   29 de abril, la sesiones se llevaran a cabo los Miércoles de 10:00 a 11:30 am hora CDMX
                   <br />
@@ -259,7 +259,7 @@ export default function RestAndReinventPage() {
               </div>
               <div className="rr-quien-image-wrap">
                 <Image
-                  src="/images/AMI-221.jpg"
+                  src="/images/IM4.jpeg"
                   alt="Amaranta Gómez Salgado"
                   fill
                   sizes="(max-width: 980px) 100vw, 45vw"
@@ -276,33 +276,31 @@ export default function RestAndReinventPage() {
             <h2 className="rr-section-title rr-section-title-center rr-testimonios-title">Testimonios</h2>
             <div className="rr-testimonios-grid">
               <div className="rr-testimonial-card">
-                <div className="rr-testimonial-avatar">
-                  <Image src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop" alt="Mari" width={80} height={80} />
-                </div>
-                <p className="rr-testimonial-name">Mari</p>
+                <div className="rr-testimonial-avatar rr-testimonial-avatar--empty" aria-hidden />
+                <p className="rr-testimonial-name">Moni</p>
                 <div className="rr-testimonial-stars">★★★★★</div>
                 <p className="rr-testimonial-text">
-                  Saliendo de un grupo en total seguimiento y sintiéndome identificada con una pared, me di a la tarea de buscar un coaching sencillo y un grupo de personas con quienes interactuar. Ella fue muy buena contigo y me sentí apoyada, escuchada, ¡hoy gracias a Amaranta!, mi vida va rodando, me siento más fuerte, me siento motivada, me creo lo que soy y hoy tengo herramientas para encontrar los senderos mas irregulares que a veces regresan a tu vida en ciertos momentos. Me encanta compartir todo obtenido con todo el mundo, reencauzar a individuos y alentar a las personas para que se consideren a si en algo diferente, reencauzar una experiencia, o unirse a mejores personas, and rear el hoy.
+                  Despues del Reinicia &amp; Reinvéntate todo tuvo dirección, poder ver el proyecto de frente e ir paso a paso, tener claro a dónde quiero llegar, tener las herramientas correctas y las direcciones correctas. El trabajar en coaching grupal también fue una muy buena experiencia, me sentí acompañada y apoyada. Y personalmente creerme capaz de hacer esto o cualquier cosa que me proponga!
                 </p>
               </div>
               <div className="rr-testimonial-card">
                 <div className="rr-testimonial-avatar">
-                  <Image src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop" alt="Caro" width={80} height={80} />
+                  <Image src="/images/Mari.jpeg" alt="Caro" width={80} height={80} />
                 </div>
                 <p className="rr-testimonial-name">Caro</p>
                 <div className="rr-testimonial-stars">★★★★★</div>
                 <p className="rr-testimonial-text">
-                  Empezando este coaching con dudas y miedos de no ser capaz, un propósito que llegué a sentir que era mío, grande o pequeño, con ideas solo en papel, un proyecto a que estaba ahí sin arrancar. Después del coaching de Rest &amp; Reinvent de una buena situación, pude ver el proyecto de frente a la persona opuesta, tomar una donde quiero llegar, tener las herramientas correctas y los altercados correctos. El trabajar en coaching grupal también fue una muy buena experiencia, me sentí acompañada y apoyada. Y personalmente crear una copia de hacer esto a cualquier o una que mas para mí.
+                  Empecé este coaching con dudas y miedos de no ser capaz, un proyecto que llegué a sentir que era más grande que yo, con ideas solo en papel, un proyecto que estaba ahí sin arrancar.
                 </p>
               </div>
               <div className="rr-testimonial-card">
                 <div className="rr-testimonial-avatar">
-                  <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="Sergio" width={80} height={80} />
+                  <Image src="/images/Sergio.jpeg" alt="Sergio" width={80} height={80} />
                 </div>
                 <p className="rr-testimonial-name">Sergio</p>
                 <div className="rr-testimonial-stars">★★★★★</div>
                 <p className="rr-testimonial-text">
-                  Un sentido perdido, demostrando sin vueltas y bloqueando paso al ir pasando las sesiones mi mente y espíritu fueron adquiriendo seguridad y confianza y al terminar me siento animado, enfocado y las cosas (como el horario de trabajo) se empiezan a dar y a acomodar.
+                  Me sentía perdido, desanimado sin rumbo y bloqueado pero al ir pasando las sesiones mi mente y espíritu fueron adquiriendo seguridad y confianza y al terminar me siento animado, enfocado y las cosas ( como si fuera arte de magia) se empiezan a dar y acomodar.
                 </p>
               </div>
             </div>
