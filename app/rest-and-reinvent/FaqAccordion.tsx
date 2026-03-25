@@ -5,7 +5,7 @@ import { useState } from "react";
 const FAQ_ITEMS = [
   {
     q: "¿Cuándo empieza el siguiente grupo?",
-    a: "Martes 8 de abril a la 7:00pm hora México y Miércoles 29 de abril la sesiones 10:00 am hora México.",
+    a: "Martes 14 de abril a la 7:00pm hora México y Miércoles 29 de abril la sesiones 10:00 am hora México.",
   },
   {
     q: "¿Qué horarios tiene?",
