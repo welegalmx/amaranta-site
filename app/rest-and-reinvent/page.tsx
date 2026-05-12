@@ -206,9 +206,7 @@ export default function RestAndReinventPage() {
                 <p style={{ marginTop: 18, marginBottom: 0 }}>
                   <strong>Siguientes cursos:</strong>
                   <br />
-                  14 de abril , la sesiones se llevaran a cabo los Martes de 7:00 a 8:30 pm hora CDMX
-                  <br />
-                  29 de abril, la sesiones se llevaran a cabo los Miércoles de 10:00 a 11:30 am hora CDMX
+                  20 de mayo, la sesiones se llevaran a cabo los miércoles de 5:00 a  6:30 pm hora CDMX y 7:00 a 8:30 pm hora NY
                   <br />
                   <strong>¡CUPO LIMITADO!</strong>
                 </p>
